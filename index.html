@@ -22,21 +22,30 @@
   <body>
       <div class="wrapper">
         <div class="container">
+
             <header class="header"> 
-                <h1 class="toptitle">DevDetective</h1>
-                <div id="dark-Mode"> DARK </div>
-                <!-- pasted  -->
-                <div class="icon-container"><img id="mode-icon" src="./assets/images/moon-icon.svg" alt=""></div> 
+              <h1 class="toptitle">DevDetective</h1>
+              <div id="btn-mode">
+
+                <div id="dark-Mode"> DARK </div> <!--mode text-->
+                <!-- pasted  --> 
+                <div class="icon-container">
+                  <img id="mode-icon" src="./assets/images/moon-icon.svg" alt="">
+                </div>
+
+              </div>
             </header>
+
           <main>
-            <div id="upperContainer">
-                <div class="searchUsername">
+            <div id="upperContainer">  <!-- app -->
+
+                <div class="searchUsername">  <!--searchbar container-->
                     <input type="search" name="user-input" id="input" placeholder="Enter a GitHub username..." required>
                       <!-- pasted  -->
                       <div class="error">
                          <p id="no-results">no search results</p>
                       </div>
-                      <!-- pasted  -->
+                      <!-- ------ -->
 
                     <button class="btn-search" id="submit">Search</button>
                 </div>
