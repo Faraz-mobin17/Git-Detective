@@ -235,12 +235,13 @@ img {
 }
 
 .profile-info {
-  width: 50%;
+  /* width: 50%; */
   display: flex;
   gap: 14px;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .bottom-icons {
