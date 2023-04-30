@@ -153,7 +153,7 @@ img:hover {
   font-size: 14px;
   /* font-weight: bold; */
   margin-right: 30px;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
   border: 2px solid var(--btn);
 }
 @media (max-width: 946px) {
