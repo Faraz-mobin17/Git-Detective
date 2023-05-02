@@ -31,6 +31,7 @@ const company = get("company");
 
 
 // TODO: select all the elements on which we have to add listener
+const button = document.querySelector(".btn-search");
 
 // TODO: add dark mode toggler code
 
