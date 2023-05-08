@@ -1,38 +1,42 @@
-// javascript starts here
-//Variables
-const searchbar = document.querySelector(".searchbar-container");
-const profilecontainer = document.querySelector(".profile-container");
-const root = document.documentElement.style;
-const get = (param) => document.getElementById(`${param}`);
-
-//API
-const url = "https://api.github.com/users/";
-const noresults = get("no-results");
-const btnmode = get("btn-search");
-const darkmode = get("dark-mode");
-const modeicon = get("mode-icon");
-const btnsubmit = get("submit");
-const input = get("searchbar");
-const avatar = get("avatar");
-const userName = get("name");
-const user = get("user");
-const date = get("date");
-const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-const bio = get("bio");
-const repos = get("repos");
-const followers = get("followers");
-const following = get("following");
-const user_location = get("location");
-const page = get("page");
-const twitter = get("twitter");
-const company = get("company");
-
-
-
-
-// TODO: select all the elements on which we have to add listener
 const button = document.querySelector(".btn-search");
-
-// TODO: add dark mode toggler code
+const bio = document.querySelector("#bio");
+const username = document.querySelector("#name");
+const date = document.querySelector("#date");
+const repos = document.querySelector("#repos");
+const followers = document.querySelector("#followers");
+const following = document.querySelector("#following");
+const loc = document.querySelector("#location");
+const twitter = document.querySelector("#twitter");
+const company = document.querySelector("#company");
+const page = document.querySelector("#page");
+const avatar = document.querySelector("#avatar");
+button.addEventListener("click", (e) => {
+  e.preventDefault();
+  const searchBar = document.querySelector("#searchbar");
+  console.log(searchBar);
+  getUser(searchbar.value);
+});
 
 // TODO: add api and key in js file and comment it
+
+async function getUser(searchbar) {
+  console.log(searchbar);
+  try {
+    const response = await axios.get(
+      `https://api.github.com/users/${searchbar}`
+    ); // add api to get data
+    console.log(response.data);
+    username.innerHTML = response.data.name;
+    bio.innerHTML = response.data.bio;
+    loc.innerHTML = response.data.location;
+    followers.innerHTML = response.data.followers;
+    following.innerHTML = response.data.following;
+    repos.innerHTML = response.data.public_repos;
+    company.innerHTML = response.data.company;
+    twitter.innerHTML = response.data.twitter_username;
+    page.innerHTML = response.data.blog;
+    avatar.src = response.data.avatar_url;
+  } catch (error) {
+    console.error(error);
+  }
+}
