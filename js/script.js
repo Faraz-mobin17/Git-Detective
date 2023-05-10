@@ -42,7 +42,7 @@ async function getUser(searchbar) {
     nosearch.innerHTML= "";
   } 
   catch (error) {
-    avacont.innerHTML= "";
+    // avacont.innerHTML= "";
     nosearch.innerHTML= "";
     username.innerHTML = "";
     bio.innerHTML ="";
@@ -58,6 +58,3 @@ async function getUser(searchbar) {
     console.error(error);
   }
 }
-
-
-//gdjdfia fidf ajg
